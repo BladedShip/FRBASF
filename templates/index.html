@@ -42,6 +42,90 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+        header{
+            color: white;
+            background-color: #0b4c61;
+            padding: 2rem 3rem;
+        }
+        h1{
+            font-size: 2rem;
+            color:white;
+
+        }
+        .copyright{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li{
+            list-style: none;
+            color: white;
+        }
+        footer{
+            background-color: #0b4c61;
+            color: white;
+            padding: 2rem 3rem;
+        }
+        .contact{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 4rem;
+        }
+        .card-header{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap:1rem;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        .about-footer{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        a:hover {
+            color:white;
+            text-decoration: underline;
+        }
+        .icons{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap:1rem 4rem
+        }
+        .about-footer > p{
+            opacity: 50%;
+            line-height: 1.5;
+        }
+
+        .w-full{
+            width: 100%;
+        }
+        .mb-6{
+            margin-bottom: 6rem;
+        }
+        .flex{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: fit-content;
+        }
+        .card-body > div {
+            display: flex;
+            gap:1rem;
+            align-items: center;
+        }
+        .section-header{
+            text-align: center;
+            margin-bottom: 4rem;
+        }
     </style>
 </head>
 
@@ -90,7 +174,7 @@
         <!-- Banner -->
         <section id="banner">
 
-            <header>
+            <div class="section-header">
                 <h2>Face Recognition Based Automatic Attendance System.</h2>
                 <p>
                     <h6>
@@ -98,20 +182,22 @@
                         Enter the Name, ID of entries and click add user to add a new user. While adding a new user, the camera will open up and capture the face image of that user.
                     </h6>
                 </p>
-            </header>
+            </div>
 
             <div class="container mt-5">
                 <!-- Using flexbox to center the row horizontally -->
                 <div class="d-flex justify-content-center">
                     <!-- Today's Attendance -->
-                    <div class="col-md-6">
-                        <div class="card mb-3">
+                    <div class="w-full mb-6">
+                        <div class="card mb-3 w-full">
                             <div class="card-header" style="background-color: #0b4c61; color: white;">
                                 Today's Attendance <i class="material-icons">assignment</i>
                             </div>
                             <div class="card-body">
-                                <a href="/start" class="btn btn-primary btn-lg btn-block">Take Attendance <i class="material-icons">beenhere</i></a>
+                                <div>
+                                <a href="/start" class="btn btn-primary btn-lg btn-block flex">Take Attendance <i class="material-icons">beenhere</i></a>
                                 <a href="/newperiod" class="btn btn-warning btn-lg btn-block">New Period</a> <!-- New button for a new period -->
+                            </div>
                                 <table class="table mt-3">
                                     <thead>
                                         <tr>
@@ -166,40 +252,41 @@
 
 			
 			<!-- Footer -->
-				<div id="footer">
-					<div class="container">
-						
-						<div class="row">
-							<div class="col-12">
-
-								<!-- Contact -->
-									<section class="contact">
-										<header>
-											<h3>Automatic Attendence System</h3>
-										</header>
-										<p>Face Recognition based automatic attendence sytem webapp, developed using python flask.</p>
-										<ul class="icons">
-											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-											<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-											<li><a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a></li>
-											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
-										</ul>
-									</section>
-
-								<!-- Copyright -->
-									<div class="copyright">
-										<ul class="menu">
-											<li>&copy; python. All rights reserved.</li><li>Design: Flask
-										</ul>
-									</div>
-
-							</div>
-
-						</div>
-					</div>
-				</div>
+            <footer id="footer">
+                <!-- Contact -->
+                <section class="contact">
+                  <div class="about-footer">
+                    <h3>Automatic Attendence System</h3>
+                    <p>Face Recognition based automatic attendence sytem webapp, developed using python flask.</p>
+                  </div>
+                  <ul class="icons">
+                    <li>
+                      <a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a>
+                    </li>
+                    <li>
+                      <a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+                    </li>
+                    <li>
+                      <a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+                    </li>
+                    <li>
+                      <a href="#" class="icon brands fa-pinterest"><span class="label">Pinterest</span></a>
+                    </li>
+                    <li>
+                      <a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a>
+                    </li>
+                    <li>
+                      <a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a>
+                    </li>
+                  </ul>
+                </section>
+              
+                <!-- Copyright -->
+                <div class="copyright">
+                  <li>&copy; python. All rights reserved.</li>
+                  <li>Design: Flask</li>
+                </div>
+            </footer>
 
 		</div>
 
