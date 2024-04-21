@@ -37,77 +37,96 @@
         tr:nth-child(even) {
             background-color: #dddddd;
         }
+        .copyright{
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left:0;
+            background-color: #0b4c61;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        li{
+            list-style: none;
+            color: white;
+        }
+        .banner{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #0b4c61;
+            color: white;
+        }
+        .banner>a>button{
+            padding: 0.5rem 1rem;
+            background-color: white;
+            color: #0b4c61;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        main {
+            padding: 2rem 4rem;
+        }
     </style>
 </head>
 
 <body>
 
-    <section id="banner">
-        <header>
+    <nav id="banner" class="banner">
+
             <h2>Face Recognition Based Automatic Attendance System.</h2>
-           <a href="/"> <button  onclick='/' class='btn btn-dark mt-3 btn-lg btn-block'>Back Home</button></a>
-        </header>
-    </section>
-    <div class="container mt-5">
-        <div class="row">
-            <!-- Today's Attendance -->
-            <div class="col-md-6">
-                <div class="card mb-3">
-                    <div class="card-header" style="background-color: #0b4c61; color: white;">
-                        User List
-                    </div>
-                    <div class="card-body">
-                        
-                        <table class="table mt-3">
-                            <thead>
-                                <tr>
-                                    <th scope="col">S No</th>
-                                    <th scope="col">User Name</th>
-                                    <th scope="col">User ID</th>
-                                    <th scope="col">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% if l %}
-                                {% for i in range(l) %}
-                                <tr>
-                                    <td>{{ i+1 }}</td>
-                                    <td>{{ names[i] }}</td>
-                                    <td>{{ rolls[i] }}</td>
-                                    <td>
-                                        <a href="/deleteuser?user={{ userlist[i] }}" class="btn btn-danger btn-sm"
-                                            onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
-                                    </td>
-                                </tr>
-                                {% endfor %}
-                                {% endif %}
-                            </tbody>
-                        </table>
-                    </div>
+           <a href="/"> <button  onclick='/' class=''>Back Home</button></a>
+    
+    </nav>
+    <main>
+        <div class="">
+            <div class="card mb-3">
+                <div class="card-header" style="background-color: #0b4c61; color: white;">
+                    User List
                 </div>
-            </div>
-
-    <!-- Footer -->
-    <div id="footer">
-        <div class="container">
-            
-            <div class="row">
-                <div class="col-12">
-
+                <div class="card-body">
                     
-
-                    <!-- Copyright -->
-                        <div class="copyright">
-                            <ul class="menu">
-                                <li>&copy; python. All rights reserved.</li><li>Design: Flask
-                            </ul>
-                        </div>
-
+                    <table class="table mt-3">
+                        <thead>
+                            <tr>
+                                <th scope="col">S No</th>
+                                <th scope="col">User Name</th>
+                                <th scope="col">User ID</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if l %}
+                            {% for i in range(l) %}
+                            <tr>
+                                <td>{{ i+1 }}</td>
+                                <td>{{ names[i] }}</td>
+                                <td>{{ rolls[i] }}</td>
+                                <td>
+                                    <a href="/deleteuser?user={{ userlist[i] }}" class="btn btn-danger btn-sm"
+                                        onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            {% endif %}
+                        </tbody>
+                    </table>
                 </div>
-
             </div>
         </div>
-    </div>
+    </main>
+            <!-- Today's Attendance -->
+            
+
+    <!-- Footer -->
+    <footer class="copyright">
+            <li>&copy; python. All rights reserved.</li>
+            <li>Design: Flask</li>
+    </footer>
 
 </div>
 
